@@ -1,11 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ashraqa Business Development Services (BDS) - Your local partner for business planning, capacity building, market systems, agri-livestock support, and more in Borana, South Oromia, Ethiopia."
+    />
+    <meta
+      name="keywords"
+      content="business development, Borana, Yabelo, business planning, feasibility study, capacity building, Ethiopia, consultancy, Ashraqa"
+    <link rel="stylesheet" href="js/style.css">
+  </meta name="author" content="Ashraqa BDS" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Ashraqa BDS - Your Local Partner for a Thriving Borana"
+    />
+    <meta
+      property="og:description"
+      content="We provide bankable business planning, training, market systems development, and more in South Oromia."
+    /<link rel="stylesheet" href="js/style.css">
+
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:url" content="https://ashraqabds.com" />
+    <meta property="og:type" content="website" />
+
+    <title>Ashraqa BDS | Business Development Services in Borana</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="js/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+      <nav class="navbar container">
+        <a href="#" class="logo">
+          <img src="images/logo.png" alt="Ashraqa BDS Logo" class="logo-img" />
+          <span class="logo-text">ASHRAQA <strong>BDS</strong></span>
+        </a>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <select
+            id="language-switcher"
+            class="lang-select"
+            aria-label="Select Language"
+          >
+            <option value="en">English</option>
+            <option value="om">Afaan Oromo</option>
+            <option value="am">አማርኛ</option>
+          </select>
+          <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <h1 data-lang="hero-title">Your Local Partner for a Thriving Borana</h1>
+        <p data-lang="hero-subtitle">
+          Empowering enterprises, cooperatives, and communities in South Oromia
+          with bankable business solutions.
+        </p>
+        <a href="#contact" class="btn btn-primary" data-lang="hero-btn"
+          >Book Free Consultation</a
+        >
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section" id="services">
+      <div class="container">
+        <h2 class="section-title" data-lang="services-title">Our Services</h2>
+        <p class="section-subtitle" data-lang="services-subtitle">
+          Comprehensive solutions for sustainable business growth.
+        </p>
+        <div class="services-grid" id="services-grid">
+          <!-- Cards will be injected here via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+      <div class="container about-content">
+        <div class="about-text">
+          <h2 class="section-title" data-lang="about-title">
+            About Ashraqa BDS
+          </h2>
+          <p data-lang="about-text1">
+            Ashraqa Business Development Services (BDS) is a multi-disciplinary
+            consulting firm based in Yabelo, South Oromia, Ethiopia. The name
+            "Ashraqa" means "sunrise," reflecting our mission to bring new
+            light, opportunity, and resilience to the businesses and communities
+            of the region.
+          </p>
+          <p data-lang="about-text2">
+            We provide end-to-end support—from business planning and financial
+            management to market linkages and digital innovation—helping
+            enterprises transform into sustainable, growing ventures.
+          </p>
+        </div>
+        <div class="about-image">
+          <i class="fas fa-sun fa-10x about-icon"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us section" id="why-us">
+      <div class="container">
+        <h2 class="section-title" data-lang="why-title">
+          Why Choose Ashraqa BDS?
+        </h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3 data-lang="why1-title">Deep Local Knowledge</h3>
+            <p data-lang="why1-text">
+              We understand Borana's culture, market dynamics, and unique
+              challenges.
+            </p>
+          </div>
+          <div class="why-card">
+            <i class="fas fa-award"></i>
+            <h3 data-lang="why2-title">Proven Track Record</h3>
+            <p data-lang="why2-text">
+              Trusted by cooperatives, MSMEs, and development partners.
+            </p>
+          </div>
+          <div class="why-card">
+            <i class="fas fa-language"></i>
+            <h3 data-lang="why3-title">Bilingual Team</h3>
+            <p data-lang="why3-text">
+              Fluent in Afaan Oromo, Amharic, and English for seamless
+              communication.
+            </p>
+          </div>
+          <div class="why-card">
+            <i class="fas fa-handshake"></i>
+            <h3 data-lang="why4-title">Client-Centric Approach</h3>
+            <p data-lang="why4-text">
+              Customized solutions that fit your specific needs and goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta section">
+      <div class="container cta-content">
+        <h2 data-lang="cta-title">Ready to Grow Your Business?</h2>
+        <p data-lang="cta-subtitle">
+          Book a free consultation with our experts today.
+        </p>
+        <a href="#contact" class="btn btn-light" data-lang="cta-btn"
+          >Get Started</a
+        >
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+      <div class="container contact-content">
+        <div class="contact-info">
+          <h2 class="section-title" data-lang="contact-title">Contact Us</h2>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <span data-lang="contact-address"
+              >Yabelo Town, South Oromia, Ethiopia</span
+            >
+          </p>
+          <p>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+251968443442">+251 968 443 442</a> (Director)
+          </p>
+          <p>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+251912344491">+251 912 344 491</a> (Finance & Ops)
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:ashraqabds04@gmail.com">ashraqabds04@gmail.com</a>
+          </p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input type="tel" id="phone" placeholder="Your Phone Number" />
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn btn-primary" data-lang="contact-btn">
+            Send Message
+          </button>
+          <p id="form-status" class="form-status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>
+          &copy; 2026 Ashraqa Business Development Services. All Rights
+          Reserved.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <!-- BLOG SECTION -->
+      <section class="section" id="blog">
+        <div class="container">
+          <h2 class="section-title">Latest Insights</h2>
+          <div id="markdown-content" class="markdown-body"></div>
+        </div>
+      </section>
+
+      <!-- Marked.js library -->
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+      <!-- Markdown loader -->
+      <script>
+        fetch("md/blog-post-1.md")
+          .then((res) => res.text())
+          .then((md) => {
+            document.getElementById("markdown-content").innerHTML =
+              marked.parse(md);
+          })
+          .catch((err) => console.error("Markdown load error:", err));
+      </script>
+    </footer>
+
+    <!-- Link to JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
+DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>a</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>

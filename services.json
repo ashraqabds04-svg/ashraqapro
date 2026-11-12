@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title_en": "Bankable Business Planning & Feasibility Studies",
+    "title_om": "Karoora Daldalaa Fandii Argamsiisuu Danda'u fi Qorannoo Dandeettii Raawwii Hojii",
+    "title_am": "ባንክ የሚቀበለው የቢዝነስ እቅድ እና የአዋጭነት ጥናት",
+    "description_en": "We transform ideas into viable, investment-ready enterprises with evidence-based planning.",
+    "description_om": "Yaadota gara daldalaatti jijjiiruuf karoora cimaa qopheessina.",
+    "description_am": "ሀሳቦችን ወደ ተግባራዊ ንግድ ለመቀየር ጠንካራ እቅድ እናዘጋጃለን።",
+    "icon": "fa-chart-line"
+  },
+  {
+    "id": 2,
+    "title_en": "Capacity Building & Training",
+    "title_om": "Ijaarsa Dandeettii fi Leenjii",
+    "title_am": "የአቅም ግንባታ እና ስልጠና",
+    "description_en": "Practical, participatory training for entrepreneurs, cooperatives, and youth.",
+    "description_om": "Dandeettii fi leenjii daldaltoota, kootii fi dargaggootaaf.",
+    "description_am": "ለስራ ፈጣሪዎች፣ ለህብረት ስራ ማህበራት እና ለወጣቶች ተግባራዊ ስልጠና።",
+    "icon": "fa-graduation-cap"
+  },
+  {
+    "id": 3,
+    "title_en": "Market Systems Development",
+    "title_om": "Misooma Sirna Gabaa",
+    "title_am": "የገበያ ስርዓት ልማት",
+    "description_en": "Facilitating linkages between producers, buyers, and service providers.",
+    "description_om": "Daldaltoota fi gabaa walitti fiduun hojjechiisuu.",
+    "description_am": "በአምራቾች፣ በገዢዎች እና በአገልግሎት ሰጪዎች መካከል ትስስር መፍጠር።",
+    "icon": "fa-network-wired"
+  },
+  {
+    "id": 4,
+    "title_en": "Agri-Livestock Enterprise Support",
+    "title_om": "Deeggarsa Daldala Qonnaa fi Beelladaa",
+    "title_am": "የእርሻ እና እንስሳት ንግድ ድጋፍ",
+    "description_en": "Supporting pastoralists and farmers to grow their businesses sustainably.",
+    "description_om": "Qonnaan bultoota fi horiin beelladaa guddisuu.",
+    "description_am": "የእርሻ እና የእንስሳት ንግድን በዘላቂነት ለማሳደግ ድጋፍ መስጠት።",
+    "icon": "fa-cow"
+  },
+  {
+    "id": 5,
+    "title_en": "Organizational Development",
+    "title_om": "Misooma Dhaabbilee",
+    "title_am": "የተቋም ልማት",
+    "description_en": "Strengthening governance, structure, and leadership for lasting impact.",
+    "description_om": "Bulchiinsa, caasaa fi hoogganummaa dhaabbilee cimsuu.",
+    "description_am": "የተቋም አስተዳደር፣ መዋቅር እና አመራርን ማጠናከር።",
+    "icon": "fa-building"
+  },
+  {
+    "id": 6,
+    "title_en": "Digital Solutions & Innovation",
+    "title_om": "Furmaata Dijitaalaa fi Kalaqa",
+    "title_am": "ዲጂታል መፍትሄዎች እና ፈጠራ",
+    "description_en": "Integrating technology to modernize business operations and reach.",
+    "description_om": "Teeknooloojii daldala keessatti fayyadamuu.",
+    "description_am": "ቴክኖሎጂን በንግድ ስራ ውስጥ ማዋሃድ።",
+    "icon": "fa-laptop-code"
+  },
+  {
+    "id": 7,
+    "title_en": "Monitoring & Evaluation (M&E)",
+    "title_om": "Hordoffii fi Madaallii",
+    "title_am": "ክትትል እና ግምገማ",
+    "description_en": "Transforming data into actionable insights for better decision-making.",
+    "description_om": "Ragaa fi odeeffannoo sirriitti madaaluu.",
+    "description_am": "መረጃን ወደ ተግባራዊ ግንዛቤ መቀየር።",
+    "icon": "fa-chart-bar"
+  },
+  {
+    "id": 8,
+    "title_en": "Business Auditing & Accounting",
+    "title_om": "Sakatta'iinsa Daldalaa fi Herrega",
+    "title_am": "የቢዝነስ ኦዲት እና ሂሳብ",
+    "description_en": "Ensuring financial transparency, compliance, and investor confidence.",
+    "description_om": "Qulqullina herrega fi amanamummaa maallaqaa mirkaneessuu.",
+    "description_am": "የፋይናንስ ግልጽነትን እና አስተማማኝነትን ማረጋገጥ።",
+    "icon": "fa-file-invoice-dollar"
+  }
+]
