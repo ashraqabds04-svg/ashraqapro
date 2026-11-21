@@ -224,3 +224,43 @@ const observer = new IntersectionObserver(
 function setupScrollAnimations() {
   document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
 }
+// --- BACKEND CONNECTION TEST ---
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('bookingForm');
+    
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Stop page from reloading
+
+            // Get the values from the input fields
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                serviceInterest: document.getElementById('serviceInterest').value
+            };
+
+            try {
+                // Send data to your backend
+                const response = await fetch('https://ashraqa-backend-xxxx.onrender.com/api/book', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                // Show success message on the website
+                document.getElementById('responseMessage').innerText = data.message;
+                document.getElementById('responseMessage').style.color = 'green';
+                
+                form.reset(); // Clear the form
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('responseMessage').innerText = "Error: Make sure backend is running.";
+                document.getElementById('responseMessage').style.color = 'red';
+            }
+        });
+    }
+});

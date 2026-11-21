@@ -29,55 +29,50 @@
 
     <title>Ashraqa BDS | Business Development Services in Borana</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+       <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./js/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./js/style.css">
+</head>
+<body>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- HEADER / NAVBAR -->
+        <!-- HEADER / NAVBAR -->
     <header class="header">
-      <nav class="navbar container">
-        <a href="#" class="logo">
-          <img src="images/logo.png" alt="Ashraqa BDS Logo" class="logo-img" />
-          <span class="logo-text">ASHRAQA <strong>BDS</strong></span>
-        </a>
+        <nav class="navbar container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Ashraqa BDS Logo" class="logo-img">
+                <span class="logo-text">ASHRAQA <strong>BDS</strong></span>
+            </a>
 
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#why-us" class="nav-link">Why Us</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
 
-        <div class="nav-actions">
-          <select
-            id="language-switcher"
-            class="lang-select"
-            aria-label="Select Language"
-          >
-            <option value="en">English</option>
-            <option value="om">Afaan Oromo</option>
-            <option value="am">አማርኛ</option>
-          </select>
-          <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-      </nav>
+            <div class="nav-actions">
+                <select id="language-switcher" class="lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="om">Afaan Oromo</option>
+                    <option value="am">አማርኛ</option>
+                </select>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
     </header>
 
     <!-- HERO SECTION -->
@@ -273,12 +268,13 @@
     <script src="./js/main.js"></script>
   </body>
 </html>
-DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>a</title>
-  </head>
-  <body></body>
-</html>
+
+<!-- Simple Test Form -->
+<h3>Book a Consultation</h3>
+<form id="bookingForm">
+    <input type="text" id="fullName" placeholder="Your Name" required>
+    <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+    <input type="text" id="serviceInterest" placeholder="Service Needed" required>
+    <button type="submit">Submit</button>
+</form>
+<p id="responseMessage"></p>
