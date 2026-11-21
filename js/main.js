@@ -2,104 +2,15 @@
 // GLOBAL STATE
 // ============================================
 let currentLanguage = "en";
-let allServices = [];
 
 // ============================================
 // INITIALIZATION
 // ============================================
 document.addEventListener("DOMContentLoaded", () => {
-  loadServices();
   setupMobileMenu();
   setupSmoothScroll();
-  setupContactForm();
-  setupLanguageSwitcher();
-  setupScrollAnimations();
+  setupBackendForm(); // Connects to your MongoDB backend
 });
-
-// ============================================
-// FETCH & RENDER SERVICES
-// ============================================
-async function loadServices() {
-  try {
-    const response = await fetch("services.json");
-    allServices = await response.json();
-    renderServices(currentLanguage);
-  } catch (error) {
-    console.error("Error loading services:", error);
-  }
-}
-
-function renderServices(lang) {
-  const grid = document.getElementById("services-grid");
-  if (!grid) return;
-
-  grid.innerHTML = "";
-
-  allServices.forEach((service) => {
-    const card = document.createElement("div");
-    card.classList.add("service-card", "fade-in");
-    card.innerHTML = `
-            <i class="fas ${service.icon}"></i>
-            <h3>${service["title_" + lang]}</h3>
-            <p>${service["description_" + lang]}</p>
-        `;
-    grid.appendChild(card);
-  });
-
-  // Re-observe new cards for scroll animation
-  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
-}
-
-// ============================================
-// LANGUAGE SWITCHER
-// ============================================
-async function setupLanguageSwitcher() {
-  const switcher = document.getElementById("language-switcher");
-
-  // Load saved language preference
-  const savedLang = localStorage.getItem("ashraqa-lang");
-  if (savedLang && ["en", "om", "am"].includes(savedLang)) {
-    currentLanguage = savedLang;
-    switcher.value = savedLang;
-    await applyTranslations(savedLang);
-  }
-
-  switcher.addEventListener("change", async (e) => {
-    currentLanguage = e.target.value;
-    localStorage.setItem("ashraqa-lang", currentLanguage);
-    await applyTranslations(currentLanguage);
-    renderServices(currentLanguage);
-  });
-}
-
-async function applyTranslations(lang) {
-  try {
-    const response = await fetch("site-content.json");
-    const content = await response.json();
-    const translations = content[lang];
-
-    // Update all elements with data-lang attribute
-    document.querySelectorAll("[data-lang]").forEach((el) => {
-      const key = el.getAttribute("data-lang");
-      if (translations[key]) {
-        el.textContent = translations[key];
-      }
-    });
-
-    // Update HTML lang attribute
-    document.documentElement.lang = lang;
-
-    // Update document title
-    const titles = {
-      en: "Ashraqa BDS | Business Development Services in Borana",
-      om: "Ashraqa BDS | Tajaajila Misooma Daldalaa Booranaa",
-      am: "Ashraqa BDS | የቢዝነስ ልማት አገልግሎቶች በበረንዳ",
-    };
-    document.title = titles[lang];
-  } catch (error) {
-    console.error("Error applying translations:", error);
-  }
-}
 
 // ============================================
 // MOBILE MENU
@@ -162,105 +73,56 @@ function setupSmoothScroll() {
 }
 
 // ============================================
-// CONTACT FORM
+// BACKEND FORM CONNECTION
 // ============================================
-function setupContactForm() {
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
+function setupBackendForm() {
+  const form = document.getElementById('bookingForm');
+  
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault(); // Stop page from reloading
 
-  if (!form) return;
+      // Get the values from the input fields
+      const formData = {
+        fullName: document.getElementById('fullName').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
+        serviceInterest: document.getElementById('serviceInterest').value
+      };
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+      // Change button text to show loading
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerText;
+      submitBtn.innerText = "Sending...";
+      submitBtn.disabled = true;
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+      try {
+        // ⚠️ REPLACE THIS LINK WITH YOUR ACTUAL RENDER LINK!
+        const response = await fetch('https://ashraqa-backend-xxxx.onrender.com/api/book', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
 
-    // Basic validation
-    if (!name || !email || !message) {
-      status.style.color = "#dc3545";
-      status.textContent = "Please fill in all required fields.";
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      status.style.color = "#dc3545";
-      status.textContent = "Please enter a valid email address.";
-      return;
-    }
-
-    // Simulate submission
-    status.style.color = "#28a745";
-    status.textContent =
-      "Thank you! Your message has been sent. We will contact you soon.";
-    form.reset();
-
-    // Clear status after 5 seconds
-    setTimeout(() => {
-      status.textContent = "";
-    }, 5000);
-  });
-}
-
-// ============================================
-// SCROLL ANIMATIONS
-// ============================================
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
+        const data = await response.json();
+        
+        // Show success message on the website
+        const responseMsg = document.getElementById('responseMessage');
+        responseMsg.innerText = data.message || "Message sent successfully!";
+        responseMsg.style.color = 'green';
+        
+        form.reset(); // Clear the form
+      } catch (error) {
+        console.error('Error:', error);
+        const responseMsg = document.getElementById('responseMessage');
+        responseMsg.innerText = "Error: Could not connect to the server. Please try again later.";
+        responseMsg.style.color = 'red';
+      } finally {
+        // Reset button text
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
       }
     });
-  },
-  {
-    threshold: 0.1,
-  },
-);
-
-function setupScrollAnimations() {
-  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+  }
 }
-// --- BACKEND CONNECTION TEST ---
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('bookingForm');
-    
-    if (form) {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Stop page from reloading
-
-            // Get the values from the input fields
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                phoneNumber: document.getElementById('phoneNumber').value,
-                serviceInterest: document.getElementById('serviceInterest').value
-            };
-
-            try {
-                // Send data to your backend
-                const response = await fetch('https://ashraqa-backend-xxxx.onrender.com/api/book', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                const data = await response.json();
-                
-                // Show success message on the website
-                document.getElementById('responseMessage').innerText = data.message;
-                document.getElementById('responseMessage').style.color = 'green';
-                
-                form.reset(); // Clear the form
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('responseMessage').innerText = "Error: Make sure backend is running.";
-                document.getElementById('responseMessage').style.color = 'red';
-            }
-        });
-    }
-});
